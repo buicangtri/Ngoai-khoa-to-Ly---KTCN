@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGOẠI KHÓA TỔ VẬT LÝ - KTCN</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #fff3e6, #ffe5cc);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Banner styling */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('banner.png');
+            /* Ensure this path is correct */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid #e63946;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Information section styling */
+        .info {
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .info h1 {
+            color: #e63946;
+            margin-top: 0;
+        }
+
+        .info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Button styling */
+        .grade-buttons {
+            margin: 20px auto;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .grade-buttons button {
+            padding: 12px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #f77f00;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            flex: 1 1 auto;
+            /* Allows buttons to grow/shrink */
+            min-width: 120px;
+            /* Minimum button width */
+        }
+
+        .grade-buttons button:hover {
+            background-color: #d62828;
+        }
+
+        /* Rules and Results section styling */
+        .rules-results {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-top: 4px solid #2a9d8f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .rules-results h2 {
+            color: #e63946;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .rules-results p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Box styling for each iframe */
+        .iframe-box {
+            background-color: #f9f9f9;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #e63946;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .iframe-box h3 {
+            margin-top: 0;
+            color: #e63946;
+        }
+
+        /* Scrollable iframe container */
+        .iframe-container {
+            width: 100%;
+            height: 500px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            /* Responsive iframe width */
+            height: 800px;
+            pointer-events: none;
+            border: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .info p {
+                font-size: 14px;
+                /* Smaller font for mobile */
+            }
+
+            .grade-buttons button {
+                font-size: 14px;
+                /* Smaller font for buttons on mobile */
+                padding: 10px;
+                /* Smaller padding for mobile buttons */
+            }
+        }
+    </style>
+    <script>
+        function toggleGradeSection(grade) {
+            const sections = document.querySelectorAll('.rules-results');
+
+            sections.forEach(section => {
+                if (section.id === grade) {
+                    // Toggle only the clicked section
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    // Close any other open section
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Banner Section -->
+    <div class="banner"></div>
+
+    <!-- Festival Information -->
+    <div class="info">
+        <h1>NGOẠI KHÓA TỔ VẬT LÝ - KTCN</h1>
+        <p>Chào mừng các em học sinh tham dự ngoại khóa tổ Vật lý - KTCN năm học 2024 - 2025. Các em bấm vào các nút bên
+            dưới để xem luật thi và kết quả. Chúc các em thành công và đạt nhiều giải thưởng!</p>
+    </div>
+
+    <!-- Grade Selection Buttons -->
+    <div class="grade-buttons">
+        <button onclick="toggleGradeSection('grade10')">Khối 10</button>
+        <button onclick="toggleGradeSection('grade11')">Khối 11</button>
+        <button onclick="toggleGradeSection('grade12')">Khối 12</button>
+    </div>
+
+    <!-- Rules and Results for each Grade -->
+    <div id="grade10" class="rules-results">
+        <h2>Nội dung ngoại khóa khối 10</h2>
+
+        <div class="iframe-box">
+            <h3>Thể lệ cuộc thi "Tên lửa nước - Bay bổng bất ngờ" khối 10.</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Doc for rules -->
+                <iframe
+                    src="https://docs.google.com/document/d/11GZZvDNuq949VxFMhbt25LHo7zeM39hw/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 10 Rules"></iframe>
+            </div>
+        </div>
+
+        <div class="iframe-box">
+            <h3>Kết quả cuộc thi "Tên lửa nước - Bay bổng bất ngờ" khối 10</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Sheet for results -->
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/1-rvSztJY1KlJ6IXatVobAzKipvYVJcFo/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 10 Results"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="grade11" class="rules-results">
+        <h2>Nội dung ngoại khóa khối 11</h2>
+
+        <div class="iframe-box">
+            <h3>Thể lệ cuộc thi "Vi mạch nhỏ - Tốc độ to" khối 11.</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Doc for rules -->
+                <iframe
+                    src="https://docs.google.com/document/d/11Ztm8jnoaq_LISJtdsh3OIJDYZ-kU5R-/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 11 Rules"></iframe>
+            </div>
+        </div>
+
+        <div class="iframe-box">
+            <h3>Kết quả cuộc thi "Vi mạch nhỏ - Tốc độ to" khối 11.</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Sheet for results -->
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/10-eqgOWwIIqf3OKwxjtfDV6emiDF3_5_/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 11 Results"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="grade12" class="rules-results">
+        <h2>Nội dung ngoại khóa khối 12</h2>
+
+        <div class="iframe-box">
+            <h3>Thể lệ cuộc thi "Vi mạch nhỏ - Tốc độ to" khối 12</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Doc for rules -->
+                <iframe
+                    src="https://docs.google.com/document/d/11Ztm8jnoaq_LISJtdsh3OIJDYZ-kU5R-/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 12 Rules"></iframe>
+            </div>
+        </div>
+
+        <div class="iframe-box">
+            <h3>Kết quả cuộc thi "Vi mạch nhỏ - Tốc độ to" khối 12.</h3>
+            <div class="iframe-container">
+                <!-- Embed Google Sheet for results -->
+                <iframe
+                    src="https://docs.google.com/spreadsheets/d/10-eqgOWwIIqf3OKwxjtfDV6emiDF3_5_/edit?usp=sharing&ouid=105171397529149568505&rtpof=true&sd=true"
+                    title="Grade 12 Results"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
